@@ -102,6 +102,7 @@ public class Casino implements EntryPoint, MainMenuEvents, GameViewCallback {
 		blackJackController.setView(blackJackview);
 		blackJackview.setController(blackJackController);
 		blackJackview.setCallback(this);
+		blackJackModel.setPlayer(p);
 	}
 	
 	private void initPokerView(Player p)
