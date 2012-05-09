@@ -99,5 +99,10 @@ public class Player{
 		this.folded = false;
 	}
 	
+	public void resetHand()
+	{
+		this.hand = new Hand();
+	}
+	
 }
 

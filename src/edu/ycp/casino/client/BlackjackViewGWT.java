@@ -137,7 +137,6 @@ public class BlackjackViewGWT extends Composite implements Observer, GameViewCal
 		//current money left
 		wallet = new TextBox();
 		wallet.setReadOnly(true);
-		wallet.setText("1000");
 		layoutPanel.add(wallet);
 		wallet.setSize("75", "35");
 		layoutPanel.setWidgetLeftWidth(wallet, 89.0, Unit.PX, 50.0, Unit.PX);
@@ -416,7 +415,7 @@ public class BlackjackViewGWT extends Composite implements Observer, GameViewCal
 		handvalue.setText(""+model.getPlayer().getHand().getBJHandValue());
 		//dealerValue.setText(""+model.getDealer().getHand().getBJHandValue());
 		//update wallet
-		wallet.setText(""+controller.currentWallet(Integer.parseInt(wallet.getText())));
+		wallet.setText(""+controller.currentWallet(model.getPlayer().getBalance()));
 	}
 	public void resetImage(Image image){
 		image.setVisible(false);

@@ -26,9 +26,9 @@ public class BlackjackController {
 	public int currentWallet(int wallet){
 		bet = Integer.parseInt(view.getEnterBet().getText());
 		if (endgame == true){
-		wallet = wallet + model.checkOut(model.getPlayer(), model.getDealer(), bet);//get the reward good or bad;
+		wallet = model.getPlayer().getBalance() + model.checkOut(model.getPlayer(), model.getDealer(), bet);//get the reward good or bad;
 		}
-		
+		model.getPlayer().getWallet().setBalance(wallet);
 		return wallet;
 
 	}
@@ -51,6 +51,7 @@ public class BlackjackController {
 		allow = true;
 		endgame = false;
 		hits = 0;
+		view.update(model, null);
 	}
 	//hit or add cards
 	public void hit(){

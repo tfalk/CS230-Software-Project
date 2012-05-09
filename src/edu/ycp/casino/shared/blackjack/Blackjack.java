@@ -31,7 +31,7 @@ public class Blackjack extends Game{
 	}
 	//reset
 	public void reset(){
-		this.player = new Player();
+		this.player.resetHand();
 		this.master = new Player();
 		this.dealer = new Dealer();
 	}
